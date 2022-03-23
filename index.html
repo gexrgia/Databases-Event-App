@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>UCF Event App</title>
-        <!--Additional file links (js, css, bootstrap)-->
-
+        <!--CSS-->
+        <link href="css/styles.css?version=1" rel="stylesheet">
+        <!--Bootstrap & Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <!--Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <!--Front Page-->
-
+        <div id="body">
+            <!--Top Border Title-->
+            <h1 id="title">University Events</h1>
+        
+            <div id="container">
+                <div style="display: table-row">
+                    <!--Login block-->
+                    <div style="width: 50%; padding-right: 6%; display: table-cell;">
+                        <span id="inner-title">Sign In</span>
+                        <input class="creds" type="text" id="login" placeholder="Email">
+                        <input class="creds" type="password" id="password" placeholder="Password"/>
+                        <button type="button" id="loginButton" onclick="doLogin();">Login</button>
+                    </div>
+                    
+                    <!--Borderline-->
+                    <div id="vr"></div>
+                
+                    <!--Register block-->
+                    <div style="padding-left: 6%; display: table-cell;">
+                        <span id="inner-title">Sign Up</span>
+                        <input class="creds" type="text" id="firstName" placeholder="First Name">
+                        <input class="creds" type="text" id="lastName" placeholder="Last Name"/>
+                        <input class="creds" type="text" id="newLogin" placeholder="Email"/>
+                        <input class="creds" type="password" id="newPassword" placeholder="Password"/>
+                        <input class="creds" type="password" id="newPasswordConfirm" placeholder="Confirm Password"/>
+                        <button type="button" id="registerButton" onclick="addUser();">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

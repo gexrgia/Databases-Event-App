@@ -1,0 +1,65 @@
+body div#body {
+    min-height: calc(100vh);
+    font-family: 'Poppins', sans-serif;
+    background-color: #3a3a3a;
+}
+
+h1#title{
+    background-color: gold;
+    padding: 1pc;
+    margin-bottom: 2pc;
+}
+
+#container {
+    display: table;
+    width: 70%;
+    padding: 4% 6%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+  
+#vr {
+    display:table-cell;
+    background-color: #a5a5a569;
+    opacity: 0.5;
+    width: 1px;
+}
+
+input.creds {
+    width: 100%;
+    color: #5f5f5f;
+    padding: 2pc 0 1.5pc 0;
+    outline: none;
+    border-style: none;
+    border-bottom: 1px solid;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #bdbdbd;
+    font-size: 16px;
+    padding: 0.5pc 0.25pc;
+}
+
+button:hover {
+    color: #ebebeb;
+    background-color: hsl(206,100%,52%);
+}
+
+button#loginButton, button#registerButton {
+    margin: 4pc 0;
+}
+
+span#inner-title {
+    font-size: 24px;
+}
+
+#title{
+    text-align: center;
+}
