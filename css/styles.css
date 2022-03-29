@@ -1,13 +1,22 @@
-body div#body {
-    min-height: calc(100vh);
+:root {
+    --non-black: #5f5f5f;
+    --lightblue: hsl(206,100%,52%);
+    --golden: #ffe600;
+    --red: hsl(3, 89%, 47%);
+}
+
+/*------- est. on index --------*/
+
+body div.body {
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: #3a3a3a;
 }
 
 h1#title{
-    background-color: gold;
+    background-color: var(--golden);
     padding: 1pc;
-    margin-bottom: 2pc;
+    margin-bottom: 1.5pc;
 }
 
 #container {
@@ -21,14 +30,14 @@ h1#title{
   
 #vr {
     display:table-cell;
-    background-color: #a5a5a569;
+    background-color: var(--non-black);
     opacity: 0.5;
     width: 1px;
 }
 
 input.creds {
     width: 100%;
-    color: #5f5f5f;
+    color: var(--non-black);
     padding: 2pc 0 1.5pc 0;
     outline: none;
     border-style: none;
@@ -49,7 +58,7 @@ button {
 
 button:hover {
     color: #ebebeb;
-    background-color: hsl(206,100%,52%);
+    background-color: var(--lightblue);
 }
 
 button#loginButton, button#registerButton {
@@ -62,4 +71,135 @@ span#inner-title {
 
 #title{
     text-align: center;
+}
+
+/*------ est. on eventFeed -------*/
+button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton {
+    margin: 0.5pc 0;
+    color: #ebebeb;
+    width: 8%;
+    height: 2.5pc;
+    border-radius: 5px;
+    background-color: var(--lightblue);
+    border-color: transparent;
+}
+
+button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton {
+    background-color: hsl(206,100%,40%);
+}
+
+button#searchButton {
+    margin: 0.5pc 0;
+    color: hsl(206,100%,52%);
+    width: 8%;
+    height: 2.5pc;
+    border-radius: 5px;
+    border: 2px solid var(--lightblue);
+    background-color: hsl(206,96%,90%);
+}
+
+button:hover#searchButton {
+    background-color: hsl(206,93%,83.5%);
+}
+
+button#logoutButton, button#removeButton, button#closeEditButton {
+    text-align: center;
+    margin: 0.5pc 0;
+    color: var(--red);
+    border-radius: 5px;
+    width: 100%;
+    background: transparent;
+}
+
+button:hover#logoutButton, button:hover#removeButton, button:hover#closeEditButton {
+    color: hsl(0, 0%, 99%);
+    background-color: var(--red);
+    border-color: transparent;
+}
+
+button#updateButton {
+    text-align: center;
+    margin: 0.5pc 0;
+    color: var(--lightblue);
+    border-radius: 5px;
+    width: 100%;
+    background: transparent;
+}
+
+button:hover#updateButton {
+    color: hsl(0, 0%, 99%);
+    background-color: var(--lightblue);
+    border-color: transparent;
+}
+
+button#deleteButton {
+    width: 15%;
+    margin-top: 1pc;
+    margin-right: 1.5pc;
+    background-color: hsl(0, 100%, 70%);
+}
+
+button:hover#deleteButton, button:hover.deleteButton {
+    background-color: var(--red);
+}
+
+button#closeDeleteButton {
+    width: 15%;
+    margin-top: 1pc;
+}
+
+button#editButton, button#closeEditButton {
+    width: 10%;
+}
+
+#contentContainer {
+    display: block;
+    border-radius: 10px;
+    margin:0 5%;
+    min-height: 80%;
+    padding: 0.5%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+div#queryBlock {
+    display: flex; 
+    justify-content: space-evenly;
+    margin-bottom: 0.5%;
+}
+
+input.query {
+    width: 20%;
+    height: 2.5pc;
+    margin: 0.5pc 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    background-color: #e0e0e0;
+    font-size: 16px;
+  }
+
+table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body>div>div>div#userBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0;
+}
+
+table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result:hover{
+    background-color: #ffffff;
+}
+
+table#resultsTable {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(150, 150, 150);
+    padding-top: 1%;
 }

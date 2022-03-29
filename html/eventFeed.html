@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>University Event App</title>
+        <!--CSS-->
+        <link href="../css/styles.css?version=1" rel="stylesheet">
+        <!--Bootstrap & Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <!--Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="body" style="padding-top: 1%;">
+            <div id="contentContainer">
+                <div id="userBlock">
+                    <div width="90%">
+                        <h1>[user]</h1>
+                    </div>
+                    <div width="10%">
+                        <button type="button" id="logoutButton" onclick="doLogout()">Logout</button>
+                    </div>
+                </div>
+
+                <!--Query block-->
+                <div id="queryBlock">
+                    <input class="query" type="text" id="qEventName" placeholder="Event Name">
+                    <input class="query" type="text" id="qRSO" placeholder="Student Organization">
+                    <input class="query" type="datetime-local" id="qDate" placeholder="Date">
+                    <input class="query" type="text" id="qLocation" placeholder="Location">
+                    <button type="button" id="searchButton" onclick="searchContact();">Search</button>
+                    <button type="button" id="addButton" onclick="addContact();">Add</button>
+                </div>
+            
+                <!--Result table-->
+                <table id="resultsTable" cellpadding=5pc>
+                    <thead>
+                        <tr id="resultsHead">
+                            <th width="23%">Event</th>
+                            <th width="23%">Student Organization</th>
+                            <th width="23%">Date</th>
+                            <th width="23%">Location</th>
+                            <th width="8%"></th>
+                        </tr>
+                    </thead>
+                
+                    <tbody id="resultsBody">
+                        <!--Example row-->
+                        <tr class="result">
+                            <td width="23%">Party at The Student Union</td>
+                            <td width="23%">Student Social Club</td>
+                            <td width="23%">Tuesday 3/29/2022 @ 4pm</td>
+                            <td width="23%">Student Union</td>
+                            <td width="8%">
+                                <button id="updateButton">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
