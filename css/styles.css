@@ -156,7 +156,7 @@ button#editButton, button#closeEditButton {
     display: block;
     border-radius: 10px;
     margin:0 5%;
-    min-height: 80%;
+    min-height: 80vh;
     padding: 0.5%;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -165,6 +165,10 @@ div#queryBlock {
     display: flex; 
     justify-content: space-evenly;
     margin-bottom: 0.5%;
+}
+
+div#eventDate, div#eventDescription {
+    margin-bottom: 1%;
 }
 
 input.query {
@@ -178,22 +182,22 @@ input.query {
     font-size: 16px;
   }
 
-table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result{
+table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
-body>div>div>div#userBlock{
+body>div>div>div#userBlock {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1% 0;
+    padding: 1%;
 }
 
-table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result:hover{
+table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result:hover {
     background-color: #ffffff;
 }
 
