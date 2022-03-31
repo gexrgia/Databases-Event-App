@@ -28,7 +28,7 @@ h1#title{
     border-radius: 10px;
 }
   
-#vr {
+#divide {
     display:table-cell;
     background-color: var(--non-black);
     opacity: 0.5;

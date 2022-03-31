@@ -22,20 +22,20 @@
                     <!--Login block-->
                     <div style="width: 50%; padding-right: 6%; display: table-cell;">
                         <span id="inner-title">Sign In</span>
-                        <input class="creds" type="text" id="login" placeholder="Email">
+                        <input class="creds" type="text" id="email" placeholder="Email">
                         <input class="creds" type="password" id="password" placeholder="Password"/>
-                        <button type="button" id="loginButton" onclick="doLogin();">Login</button>
+                        <button type="button" id="loginButton" onclick="loginUser();">Login</button>
                     </div>
 
                     <!--Borderline-->
-                    <div id="vr"></div>
+                    <div id="divide"></div>
                 
                     <!--Register block-->
                     <div style="padding-left: 6%; display: table-cell;">
                         <span id="inner-title">Sign Up</span>
                         <input class="creds" type="text" id="firstName" placeholder="First Name">
                         <input class="creds" type="text" id="lastName" placeholder="Last Name"/>
-                        <input class="creds" type="text" id="newLogin" placeholder="Email"/>
+                        <input class="creds" type="text" id="newEmail" placeholder="Email"/>
                         <input class="creds" type="password" id="newPassword" placeholder="Password"/>
                         <input class="creds" type="password" id="newPasswordConfirm" placeholder="Confirm Password"/>
                         <button type="button" id="registerButton" onclick="addUser();">Register</button>
