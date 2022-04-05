@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>RSO Management</title>
+        <!--CSS-->
+        <link href="../css/styles.css?version=1" rel="stylesheet">
+        <!--Bootstrap & Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <!--Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="body" style="padding-top: 1%;">
+            <div id="contentContainer" style="padding: 2%;">
+                <!--RSO name in body>div>div>div#rsoManage>div>h1#rsoName-->
+                <div id="rsoManage">
+                    <div><h1 id="rsoName">RSO Club</h1>
+                    <h4 id="rsoUni">UCF</h4></div>
+                </div>
+
+                <!--Event date/time in h4>span#rsoMembers-->
+                <h4><span id="rsoMembers">254</span> members</h4>
+                <!--RSO description in div#rsoDescription-->
+                <textarea id="rsoDescInput" rows="5" cols="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Nunc sed blandit libero volutpat sed cras. In hac habitasse platea dictumst vestibulum rhoncus est. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Egestas tellus rutrum tellus pellentesque eu tincidunt. Felis eget velit aliquet sagittis. Lectus proin nibh nisl condimentum id venenatis. Turpis cursus in hac habitasse. Nunc mattis enim ut tellus elementum. Purus non enim praesent elementum facilisis leo. Pellentesque nec nam aliquam sem
+                </textarea>
+
+                <table id="rsoEventsTable" cellpadding=5pc>
+                    <thead>
+                        <div id="queryBlock">
+                            <input class="rsoQuery" type="text" id="qEventName" placeholder="Event Name">
+                            <input class="rsoQuery" type="datetime-local" id="qDate" placeholder="Date">
+                            <input class="rsoQuery" type="text" id="qLocation" placeholder="Location">
+                            <button type="button" id="searchButton" style="width: 12.2%" onclick="searchEvent();">Search</button>
+                            <button type="button" id="addButton" style="width: 12.2%" onclick="addEvent();">Add</button>
+                        </div>
+                        <tr id="rsoEventsHead">
+                            <h4>Upcoming Events:</h4>
+                            <th width="25%">Event</th>
+                            <th width="25%">Date</th>
+                            <th width="25%">Location</th>
+                            <th width="25%"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rsoEventsBody">
+                        <!-- Insert Data as rows <tr class="event"> here body-div-div-table-tbody#eventsBody -->
+                        <!--Example row-->
+                        <tr class="rsoEvent">
+                            <td width="25%">Party at The Student Union</td>
+                            <td width="25%">Tuesday 3/29/2022 @ 4pm</td>
+                            <td width="25%">UCF Student Union</td>
+                            <td width="12.5%">
+                                <button id="viewButton">View</button>
+                            </td>
+                            <td width="12.5%">
+                                <button id="updateButton">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="overlay">
+                <div id="editForm">
+                    <h3 style="text-align: center;">Edit Event</h3>
+                    <input class="form" type="text" id="eFirstName" placeholder="Event Name">
+                    <input class="form" type="date" id="eDate" placeholder="Date">
+                    <input class="form" type="text" id="eLocation" placeholder="Location">
+                    <input class="form" type="text-area" id="eDescription" placeholder="Description">
+                    <div style="display: flex; justify-content: right;">
+                        <button type="button" id="editButton" onclick="editEvent();">Update</button>
+                        <button type="button" id="closeEditButton" onclick="closeEdit();">Cancel</button>
+                    </div>
+                </div>
+            
+                <div id="deleteForm">
+                    <h3 style="text-align: center;">Are you sure you want to delete the following event?</h3>
+                    <table id="deleteTable" cellpadding=5pc>
+                        <thead>
+                            <tr id="deleteHead">
+                                <th width="33%">Event Name</th>
+                                <th width="33%">Date</th>
+                                <th width="33%">Location</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody id="deleteBody">
+                            <td>Event Name</td>
+                            <td>Date</td>
+                            <td>Location</td>
+                        </tbody>
+                    </table>
+                    <div style="display: flex; justify-content: right;">
+                        <button type="button" id="deleteButton" onclick="deleteEvent();">Delete</button>
+                        <button type="button" id="closeDeleteButton" onclick="closeDelete();">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

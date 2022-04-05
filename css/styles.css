@@ -3,6 +3,7 @@
     --lightblue: hsl(206,100%,52%);
     --golden: #ffe600;
     --red: hsl(3, 89%, 47%);
+    --green: hsl(120, 55%, 43%);
 }
 
 /*------- est. on index --------*/
@@ -74,7 +75,7 @@ span#inner-title {
 }
 
 /*------ est. on eventFeed -------*/
-button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#rsoAdmin {
+button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#eventAdmin, button#rsoAdmin, button#rsoJoin {
     margin: 0.5pc 0;
     color: #ebebeb;
     height: 2.5pc;
@@ -83,7 +84,7 @@ button#addButton, button#editButton, button#deleteButton, button#closeDeleteButt
     border-color: transparent;
 }
 
-button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#rsoAdmin:hover {
+button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#eventAdmin:hover, button#rsoAdmin:hover, button#rsoJoin:hover {
     background-color: hsl(206,100%,40%);
 }
 
@@ -113,6 +114,21 @@ button#logoutButton, button#removeButton, button#closeEditButton {
 button:hover#logoutButton, button:hover#removeButton, button:hover#closeEditButton {
     color: hsl(0, 0%, 99%);
     background-color: var(--red);
+    border-color: transparent;
+}
+
+button#viewButton {
+    text-align: center;
+    margin: 0.5pc 0;
+    color: var(--green);
+    border-radius: 5px;
+    width: 100%;
+    background: transparent;
+}
+
+button:hover#viewButton {
+    color: hsl(0, 0%, 99%);
+    background-color: var(--green);
     border-color: transparent;
 }
 
@@ -170,15 +186,6 @@ div#eventDate, div#eventDescription {
     margin-bottom: 1%;
 }
 
-div#rsoDescription {
-    margin-bottom: 5%;
-}
-
-div#rsoManage{
-    display: flex;
-    justify-content: space-between;
-}
-
 input.query {
     width: 20%;
     height: 2.5pc;
@@ -188,9 +195,9 @@ input.query {
     border: 1px solid #d0d0d0;
     background-color: #e0e0e0;
     font-size: 16px;
-  }
+}
 
-table>thead>tr#eventsHead, table>tbody#eventsBody>tr.rsoEvent, table>thead>tr#rsoEventsHead, table>tbody#rsoEventsBody>tr.rsoEvent {
+table>thead>tr#eventsHead, table>tbody#eventsBody>tr.event, table>thead>tr#rsoEventsHead, table>tbody#rsoEventsBody>tr.rsoEvent {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -205,7 +212,7 @@ body>div>div>div#userBlock {
     padding: 1%;
 }
 
-table>thead>tr#eventsHead, table>tbody#eventsBody>tr.event:hover, table>tbody#commentsBody>tr.comment:hover{
+table>thead>tr#eventsHead{
     background-color: #ffffff;
 }
 
@@ -214,4 +221,74 @@ table#eventsTable, table#rsoEventsTable {
     flex-direction: column;
     border-top: 1px solid rgb(150, 150, 150);
     padding-top: 1%;
+}
+
+tr:hover {
+    background-color: rgb(255, 255, 193);
+}
+
+#deleteBody > tr {
+    background-color: transparent;
+}
+
+/*--est. on RSO Pages --*/
+
+div#rsoDescription {
+    margin-bottom: 5%;
+}
+
+div#rsoOptions, div#eventOptions{
+    display: flex;
+    justify-content: space-between;
+}
+
+input.form {
+    width: 100%;
+    height: 2.5pc;
+    margin: 0.5pc 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    background-color: #e0e0e0;
+    font-size: 16px;
+}
+
+input.rsoQuery {
+    width: 25%;
+    height: 2.5pc;
+    margin: 0.5pc 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    background-color: #e0e0e0;
+    font-size: 16px;
+}
+
+#overlay{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background:rgba(0, 0, 0, 0.7);
+}
+  
+#editForm, #deleteForm {
+    display: none;
+    position: block;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 15% 25%;
+    padding: 2% 2%;
+}
+
+table#rsoEventsTable>thead>div#queryBlock {
+    background-color: #ffffff;
+}
+
+textarea#rsoDescInput {
+    display: flex;
+    align-items: stretch;
 }
