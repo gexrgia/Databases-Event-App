@@ -15,24 +15,46 @@
     <body>
         <div class="body" style="padding-top: 1%;">
             <div id="contentContainer" style="padding: 2%;">
-                <!--RSO name in body>div>div>h1#rsoName-->
-                <h1 id="rsoName">[RSO Name]</h1>
-
-                <div>University:</div>
+                <!--RSO name in body>div>div>div#rsoManage>div>h1#rsoName-->
+                <div id="rsoManage">
+                    <div>
+                        <h1 id="rsoName">RSO Club</h1>
+                        <div id="rsoUni">UCF</div>
+                    </div>
+                    <button id="rsoAdmin" style="width: 10%">Manage</button>
+                </div>
                 <!--University name in "">"">"">h3#eventHost-->
-                <h3 id="rsoUni">[University]</h3>
-
-                <div>Members:</div>
-                <!--Event date/time in h4#rsoMembers-->
-                <h4 id="rsoMembers">
-                    [Member no.]
-                </h4>
-
-                <div>About this organization:</div>
+                
+                <!--Event date/time in h4>span#rsoMembers-->
+                <h4><span id="rsoMembers">254</span> members</h4>
                 <!--RSO description in div#rsoDescription-->
                 <div id="rsoDescription">
-                    [RSO description]
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Nunc sed blandit libero volutpat sed cras. In hac habitasse platea dictumst vestibulum rhoncus est. Aliquam vestibulum morbi blandit cursus risus at ultrices mi. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Egestas tellus rutrum tellus pellentesque eu tincidunt. Felis eget velit aliquet sagittis. Lectus proin nibh nisl condimentum id venenatis. Turpis cursus in hac habitasse. Nunc mattis enim ut tellus elementum. Purus non enim praesent elementum facilisis leo. Pellentesque nec nam aliquam sem.
                 </div>
+                <table id="rsoEventsTable" cellpadding=5pc>
+                    <thead>
+                        <tr id="rsoEventsHead">
+                            <h4>Upcoming Events:</h4>
+                            <th width="30%">Event</th>
+                            <th width="30%">Date</th>
+                            <th width="30%">Location</th>
+                            <th width="10%"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rsoEventsBody">
+                        <!-- Insert Data as rows <tr class="event"> here body-div-div-table-tbody#eventsBody -->
+                        <!--Example row-->
+                        <tr class="rsoEvent">
+                            <td width="30%">Party at The Student Union</td>
+                            <td width="30%">Tuesday 3/29/2022 @ 4pm</td>
+                            <td width="30%">UCF Student Union</td>
+                            <td width="10%">
+                                <button id="updateButton">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>

@@ -20,7 +20,7 @@
                         <h1>[user]</h1>
                     </div>
                     <div width="10%">
-                        <button type="button" id="logoutButton" onclick="doLogout()">Logout</button>
+                        <button type="button" id="logoutButton" onclick="doLogout();">Logout</button>
                     </div>
                 </div>
 
@@ -30,14 +30,14 @@
                     <input class="query" type="text" id="qRSO" placeholder="Student Organization">
                     <input class="query" type="datetime-local" id="qDate" placeholder="Date">
                     <input class="query" type="text" id="qLocation" placeholder="Location">
-                    <button type="button" id="searchButton" onclick="searchContact();">Search</button>
-                    <button type="button" id="addButton" onclick="addContact();">Add</button>
+                    <button type="button" id="searchButton" style="width: 8%" onclick="searchEvent();">Search</button>
+                    <button type="button" id="addButton" style="width: 8%" onclick="addEvent();">Add</button>
                 </div>
             
                 <!--Result table-->
-                <table id="resultsTable" cellpadding=5pc>
+                <table id="eventsTable" cellpadding=5pc>
                     <thead>
-                        <tr id="resultsHead">
+                        <tr id="eventsHead">
                             <th width="23%">Event</th>
                             <th width="23%">Student Organization</th>
                             <th width="23%">Date</th>
@@ -46,10 +46,10 @@
                         </tr>
                     </thead>
                 
-                    <tbody id="resultsBody">
-                        <!-- Insert Data as rows <tr class="result"> here body-div-div-table-tbody#resultsBody -->
+                    <tbody id="eventsBody">
+                        <!-- Insert Data as rows <tr class="event"> here body-div-div-table-tbody#eventsBody -->
                         <!--Example row-->
-                        <tr class="result">
+                        <tr class="event">
                             <td width="23%">Party at The Student Union</td>
                             <td width="23%">Student Social Club</td>
                             <td width="23%">Tuesday 3/29/2022 @ 4pm</td>

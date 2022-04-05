@@ -74,17 +74,16 @@ span#inner-title {
 }
 
 /*------ est. on eventFeed -------*/
-button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton {
+button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#rsoAdmin {
     margin: 0.5pc 0;
     color: #ebebeb;
-    width: 8%;
     height: 2.5pc;
     border-radius: 5px;
     background-color: var(--lightblue);
     border-color: transparent;
 }
 
-button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton {
+button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#rsoAdmin:hover {
     background-color: hsl(206,100%,40%);
 }
 
@@ -171,6 +170,15 @@ div#eventDate, div#eventDescription {
     margin-bottom: 1%;
 }
 
+div#rsoDescription {
+    margin-bottom: 5%;
+}
+
+div#rsoManage{
+    display: flex;
+    justify-content: space-between;
+}
+
 input.query {
     width: 20%;
     height: 2.5pc;
@@ -182,7 +190,7 @@ input.query {
     font-size: 16px;
   }
 
-table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result {
+table>thead>tr#eventsHead, table>tbody#eventsBody>tr.rsoEvent, table>thead>tr#rsoEventsHead, table>tbody#rsoEventsBody>tr.rsoEvent {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -197,11 +205,11 @@ body>div>div>div#userBlock {
     padding: 1%;
 }
 
-table>thead>tr#resultsHead, table>tbody#resultsBody>tr.result:hover {
+table>thead>tr#eventsHead, table>tbody#eventsBody>tr.event:hover, table>tbody#commentsBody>tr.comment:hover{
     background-color: #ffffff;
 }
 
-table#resultsTable {
+table#eventsTable, table#rsoEventsTable {
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgb(150, 150, 150);
