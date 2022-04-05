@@ -75,7 +75,7 @@ span#inner-title {
 }
 
 /*------ est. on eventFeed -------*/
-button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#eventAdmin, button#rsoAdmin, button#rsoJoin {
+button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#eventAdmin, button#rsoAdmin, button#rsoJoin, button#newCommentButton, button.commentEdit {
     margin: 0.5pc 0;
     color: #ebebeb;
     height: 2.5pc;
@@ -84,7 +84,7 @@ button#addButton, button#editButton, button#deleteButton, button#closeDeleteButt
     border-color: transparent;
 }
 
-button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#eventAdmin:hover, button#rsoAdmin:hover, button#rsoJoin:hover {
+button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#eventAdmin:hover, button#rsoAdmin:hover, button#rsoJoin:hover, button#newCommentButton:hover, button.commentEdit:hover {
     background-color: hsl(206,100%,40%);
 }
 
@@ -197,13 +197,15 @@ input.query {
     font-size: 16px;
 }
 
-table>thead>tr#eventsHead, table>tbody#eventsBody>tr.event, table>thead>tr#rsoEventsHead, table>tbody#rsoEventsBody>tr.rsoEvent {
+div#eventsBody {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 2%;
+}
+div.row {
+    text-align: center;
     align-items: center;
 }
-
 body>div>div>div#userBlock {
     display: flex;
     flex-direction: row;
@@ -216,15 +218,15 @@ table>thead>tr#eventsHead{
     background-color: #ffffff;
 }
 
-table#eventsTable, table#rsoEventsTable {
+table#eventsTable, table#rsoEventsTable, table#commentsBody {
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgb(150, 150, 150);
     padding-top: 1%;
 }
 
-tr:hover {
-    background-color: rgb(255, 255, 193);
+div.rsoEvent:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 #deleteBody > tr {
@@ -233,12 +235,13 @@ tr:hover {
 
 /*--est. on RSO Pages --*/
 
-div#rsoDescription {
+div#rsoDescription, div#eventDescription, div#descEdit {
     margin-bottom: 5%;
 }
 
-div#rsoOptions, div#eventOptions{
+div#rsoOptions, div#eventOptions, div#commentOptions {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -264,7 +267,7 @@ input.rsoQuery {
     font-size: 16px;
 }
 
-#overlay{
+#overlay {
     display: none;
     height: 100%;
     width: 100%;
@@ -288,7 +291,13 @@ table#rsoEventsTable>thead>div#queryBlock {
     background-color: #ffffff;
 }
 
-textarea#rsoDescInput {
+div.userComment>div.commentText {
+    background-color: rgba(187, 225, 253, 0.9);
+    border-radius: 10px;
+}
+
+textarea#rsoDescInput, textarea#commentBox {
     display: flex;
-    align-items: stretch;
+    width: 100%;
+    height: 150px;
 }
