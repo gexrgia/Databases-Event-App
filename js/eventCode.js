@@ -46,12 +46,80 @@ function loginUser() {
     }
 }
 
-function newComment(){
-  var showComment = document.getElementById("newCommentSection");
-  showComment.style.display == "none" ? showComment.style.display = "block" : showComment.style.display = "none";
+function searchEvent() {
+  var qEventName = document.getElementById("qEventName").value;
+  var qRSOName = document.getElementById("qRSO").value;
+  var qDate = document.getElementById("qDate").value;
+  var qLocation = document.getElementById("qLocation").value;
+
+  var jsonPayload = JSON.stringify({eventName:qEventName,rso:qRSO,date:qDate,location:qLocation,userid:userId});
+  //var url = urlBase + '/SearchEvent.php';
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+  document.getElementById("eventsBody").innerHTML = "";
+
+  try {
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var jsonObject = JSON.parse(xhr.responseText);
+        var results = jsonObject.results;
+        var qerr = jsonObject.error;
+
+        if (qerr) {
+          displayError(qerr);
+          return;
+        } else {
+          displaySuccess("Successfully retrieved events");
+        }
+
+        var grid = document.getElementById("eventsBody");
+        for (var i = 0; i < results.length; i++) {
+          newRow = document.createElement( "div" );
+          newRow.id = 'eventRow';
+          newRow.class = 'row';
+          newTenCol = document.createElement( "div" );
+          newTenCol.class = "col-lg-10";
+
+          titleDiv = document.createElement( "div" );
+          titleDiv.appendChild(results[i].eventName);
+          newTenCol.appendChild(titleDiv);
+
+          rsoDiv = document.createElement("div");
+          rsoDiv.appendChild(results[i].rso);
+          newTenCol.appendChild(rsoDiv);
+
+          dateDiv = document.createElement("div");
+          dateDiv.appendChild(results[i].date);
+          newTenCol.appendChild(dateDiv);
+
+          locDiv = document.createElement("div");
+          locDiv.appendChild(results[i].location);
+          newTenCol.appendChild(locDiv);
+
+          descDiv = document.createElement("div");
+          descDiv.appendChild(results[i].description);
+          newTenCol.appendChild(descDiv);
+
+          newRow.appendChild(newTenCol);
+
+          newTwoCol = document.createElement( "div" );
+          newTwoCol.class = "col-lg-2";
+          newTwoCol.innerHTML = "<button id=\"viewButton\" >View</button>";
+          newRow.appendChild(newTwoCol);
+
+          grid.appendChild(newRow);
+        }
+      }
+    };
+
+    xhr.send(jsonPayload);
+
+  } catch(err) {
+    displayError(err.message);
+  }
 }
-function postComment(){}
-function searchEvent(){}
 function addEvent(){}
 function viewEvent(){}
 
@@ -84,3 +152,10 @@ function closeEdit() {
   document.getElementById("editForm").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
+
+function newComment(){
+  var showComment = document.getElementById("newCommentSection");
+  showComment.style.display == "none" ? showComment.style.display = "block" : showComment.style.display = "none";
+}
+function postComment(){}
+

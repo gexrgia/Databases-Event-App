@@ -54,7 +54,6 @@ button {
     border-color: transparent;
     background-color: #bdbdbd;
     font-size: 16px;
-    padding: 0.5pc 0.25pc;
 }
 
 button:hover {
@@ -75,13 +74,18 @@ span#inner-title {
 }
 
 /*------ est. on eventFeed -------*/
-button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#eventAdmin, button#rsoAdmin, button#rsoJoin, button#newCommentButton, button.commentEdit {
+button#addButton, button#editButton, button#deleteButton, button#closeDeleteButton, button#eventAdmin, button#rsoAdmin, button#rsoJoin, button#newCommentButton, button.commentEdit, button#postCommentButton {
     margin: 0.5pc 0;
     color: #ebebeb;
-    height: 2.5pc;
+    height: 2.0pc;
     border-radius: 5px;
     background-color: var(--lightblue);
     border-color: transparent;
+    align-items: center;
+}
+
+button#addButton, button#postCommentButton {
+    height: 2.5pc;
 }
 
 button:hover#addButton, button:hover#editButton, button:hover#closeDeleteButton, button#eventAdmin:hover, button#rsoAdmin:hover, button#rsoJoin:hover, button#newCommentButton:hover, button.commentEdit:hover {
@@ -96,6 +100,7 @@ button#searchButton {
     border-radius: 5px;
     border: 2px solid var(--lightblue);
     background-color: hsl(206,96%,90%);
+    align-items: center;
 }
 
 button:hover#searchButton {
@@ -176,6 +181,10 @@ button#editButton, button#closeEditButton {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+div.row {
+    align-items: center;
+}
+
 div#queryBlock {
     display: flex; 
     justify-content: space-evenly;
@@ -202,7 +211,7 @@ div#eventsBody {
     flex-direction: column;
     padding: 2%;
 }
-div.row {
+div.userComment.row {
     text-align: center;
     align-items: center;
 }
