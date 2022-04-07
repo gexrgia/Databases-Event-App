@@ -4,13 +4,17 @@
     --golden: #ffe600;
     --red: hsl(3, 89%, 47%);
     --green: hsl(120, 55%, 43%);
+    --field-bg: #f6f6f6;
 }
 
 /*------- est. on index --------*/
+div.body {
+    padding-top: 1%;
+}
 
 body div.body {
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #3a3a3a;
 }
 
@@ -39,7 +43,7 @@ h1#title{
 input.creds {
     width: 100%;
     color: var(--non-black);
-    padding: 2pc 0 1.5pc 0;
+    padding: 1pc 0 1pc 0;
     outline: none;
     border-style: none;
     border-bottom: 1px solid;
@@ -48,7 +52,7 @@ input.creds {
     font-weight: bold;
 }
 
-button {
+div.body button, button#login, button#register {
     width: 100%;
     border-radius: 5px;
     border-color: transparent;
@@ -56,12 +60,12 @@ button {
     font-size: 16px;
 }
 
-button:hover {
+div.body button:hover {
     color: #ebebeb;
     background-color: var(--lightblue);
 }
 
-button#loginButton, button#registerButton {
+button#loginButton, button#registerButton, button#createRSO, button#createEvent {
     margin: 4pc 0;
 }
 
@@ -84,7 +88,7 @@ button#addButton, button#editButton, button#deleteButton, button#closeDeleteButt
     align-items: center;
 }
 
-button#addButton, button#postCommentButton {
+button#postCommentButton {
     height: 2.5pc;
 }
 
@@ -143,7 +147,7 @@ button#updateButton {
     color: var(--lightblue);
     border-radius: 5px;
     width: 100%;
-    background: transparent;
+    background-color: transparent;
 }
 
 button:hover#updateButton {
@@ -153,14 +157,25 @@ button:hover#updateButton {
 }
 
 button#deleteButton {
-    width: 15%;
-    margin-top: 1pc;
-    margin-right: 1.5pc;
-    background-color: hsl(0, 100%, 70%);
+    color: hsl(0, 100%, 70%);
+    background-color: transparent ;
+}
+
+button#closeEditButton {
+    color: hsl(0, 3%, 17%);
+    background-color: transparent ;
+}
+
+button#closeEditButton:hover {
+    color: white;
+    background-color: var(--non-black);
+    border-color: transparent;
 }
 
 button:hover#deleteButton, button:hover.deleteButton {
+    color: white;
     background-color: var(--red);
+    border-color: transparent;
 }
 
 button#closeDeleteButton {
@@ -202,8 +217,13 @@ input.query {
     outline: none;
     border-radius: 5px;
     border: 1px solid #d0d0d0;
-    background-color: #e0e0e0;
+    background-color: var(--field-bg);
     font-size: 16px;
+}
+
+input.query:focus {
+    background-color: #ffffff;
+    border-color: var(--lightblue);
 }
 
 div#eventsBody {
@@ -220,10 +240,19 @@ body>div>div>div#userBlock {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1%;
+    border-bottom: 1px solid var(--non-black);
+    margin-bottom: 2%;
+    padding: 2% 0.5%;
 }
 
-table>thead>tr#eventsHead{
+div#userButtons {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin-right: 2%;
+}
+
+table>thead>tr#eventsHead {
     background-color: #ffffff;
 }
 
@@ -243,6 +272,12 @@ div.rsoEvent:hover {
 }
 
 /*--est. on RSO Pages --*/
+div#userAdd{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+}
 
 div#rsoDescription, div#eventDescription, div#descEdit {
     margin-bottom: 5%;
@@ -261,18 +296,23 @@ input.form {
     outline: none;
     border-radius: 5px;
     border: 1px solid #d0d0d0;
-    background-color: #e0e0e0;
+    background-color: var(--field-bg);
     font-size: 16px;
 }
 
+input.form:focus{
+    background-color: #ffffff;
+    border-color: var(--lightblue);
+}
+
 input.rsoQuery {
-    width: 25%;
+    width: 29%;
     height: 2.5pc;
     margin: 0.5pc 0;
     outline: none;
     border-radius: 5px;
     border: 1px solid #d0d0d0;
-    background-color: #e0e0e0;
+    background-color: var(--field-bg);
     font-size: 16px;
 }
 
@@ -287,7 +327,7 @@ input.rsoQuery {
     background:rgba(0, 0, 0, 0.7);
 }
   
-#editForm, #deleteForm {
+#editForm, #deleteForm, #newForm {
     display: none;
     position: block;
     border-radius: 10px;
@@ -305,8 +345,17 @@ div.userComment>div.commentText {
     border-radius: 10px;
 }
 
-textarea#rsoDescInput, textarea#commentBox {
+textarea#rsoDescInput, textarea#commentBox, textarea#eComment, textarea#newEventDesc {
     display: flex;
     width: 100%;
     height: 150px;
+    margin: 0.5pc 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    background-color: var(--field-bg);
+}
+
+textarea#rsoDescInput:focus, textarea#commentBox:focus, textarea#eComment:focus, textarea#newEventDesc:focus {
+    background-color: #ffffff;
 }

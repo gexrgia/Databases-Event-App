@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>New RSO</title>
+        <title>New Event</title>
         <!--JavaScript & CSS-->
         <script type="text/javascript" src="../js/eventCode.js?version=1" defer></script>
         <link href="../css/styles.css?version=1" rel="stylesheet">
@@ -35,18 +35,16 @@
                         <button type="button" id="logoutButton" onclick="doLogout();">Logout</button>
                     </div>
                 </div>
-                <div>
-                    <h1>Create an RSO</h1>
-                    <p>Welcome! To create a new Registered Student Organization (RSO) you must have 5 total members from the same University, yourself and 4 others. <br/>
-                        Once you've completed the form and verified all of the information is correct, click the create button.</p>
-                    <input class="form" type="text" id="newRSOName" placeholder="RSO Title"/>
-                    <input class="form" type="text" id="newRSODesc" placeholder="Description"/>
-                    <!--Four users here and person creating RSO are the 5 minimum members, the emails cannot be duplicates-->
-                    <input class="form" type="email" id="newRSOMem1" placeholder="Member 1 Email"/>
-                    <input class="form" type="email" id="newRSOMem2" placeholder="Member 2 Email"/>
-                    <input class="form" type="email" id="newRSOMem3" placeholder="Member 3 Email"/>
-                    <input class="form" type="email" id="newRSOMem4" placeholder="Member 4 Email"/>
-                    <button id="createRSO" onclick="createRSO();">Create</button>
+
+                <div id="eForm">
+                    <h1>Schedule a new Event</h1>
+                    <p></p>
+                    <input class="form" type="text" id="newEventName" placeholder="Event Name" minlength="5"/>
+                    <input class="form" type="text" id="newEventHost" placeholder="Event Host" minlength="5"/>
+                    <input class="form" type="datetime-local" id="newEventTime" placeholder="Event Date and Time"/>
+                    <input class="form" type="text" id="newEventLoc" placeholder="Location"/>
+                    <textarea class="form" type="text" id="newEventDesc" placeholder="Description"></textarea>
+                    <button id="createEvent" onclick="addEvent(this);">Schedule</button>
                 </div>
             </div>
 

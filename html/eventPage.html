@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Event Details</title>
-        <!--Java & CSS-->
+        <!--JavaScript & CSS-->
         <script type="text/javascript" src="../js/eventCode.js?version=1" defer></script>
         <link href="../css/styles.css?version=1" rel="stylesheet">
         <!--Bootstrap & Bootstrap icons-->
@@ -14,8 +14,27 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="body" style="padding-top: 1%;">
+        <div class="body">
             <div id="contentContainer" style="padding: 2%;">
+
+                <div id="userBlock">
+                    <div id="userAdd">
+                        <div id="userButtons">
+                            <button id="homeButton" style="width:50px; margin-right: 1%;" onclick="location.href='eventFeed.html';">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-house" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                </svg>
+                            </button>
+                            <button id="addButton" style="width:50px;" onclick="openNewForm();">New</button>
+                        </div>
+                        
+                        <h2 style="margin-bottom: 0px;">[user]</h2>
+                    </div>
+                    <div width="10%">
+                        <button type="button" id="logoutButton" onclick="doLogout();">Logout</button>
+                    </div>
+                </div>
 
                 <!-- Event Info Section -->
                 <!--Event name in body>div>div>h1#eventName-->
@@ -23,7 +42,7 @@
                     <h1 id="eventName">[Event Name]</h1>
                     <div id="eventRSOAdmin">
                         <!--If user has hosting RSO's admin privileges-->
-                        <button id="eventAdmin" style="width: 100%">Edit</button>
+                        <button id="eventAdmin" style="width: 100%" onclick="editEvent();">Edit</button>
                     </div>
                 </div>
 
@@ -60,12 +79,32 @@
                             <!-- Insert Data as rows <tr class="userComment"> here body-div-div-table-tbody#commentsBody -->
                             <!--Example row-->
                             <div class="userComment row">
-                                <div class="commentText col-lg-10">This is a filler comment to test how it appears</div>
+                                <div class="commentText col-lg-10" id="comment">This is a filler comment to test how it appears</div>
                                 <div class="col-lg-1">user</div>
                                 <!--If user is comment owner/poster-->
-                                <div class="col-lg-1" ><button class="commentEdit">Edit</button></div>
+                                <div class="col-lg-1" >
+                                    <button class="commentEdit" id="updateButton" onclick="openCommentEdit(this, 1);">Edit</button>
+                                </div>
                             </div>
                         </div>
+                </div>
+            </div>
+            <div id="overlay">
+                <div id="newForm">
+                    <h3 style="text-align: center;">Create</h3>
+                        <button type="button" id="eFormButton" onclick="location.href='newEvent.html';" style="margin-bottom: 1%">New Event</button>
+                        <button type="button" id="rFormButton" onclick="location.href='newRSO.html';" style="margin-bottom: 1%">New RSO</button>
+                        <button type="button" id="closeNewForm" onclick="closeNewForm();">Cancel</button>
+                </div>
+
+                <div id="editForm">
+                    <h3 style="text-align: center;">Edit Comment</h3>
+                    <textarea class="form" type="text" id="eComment" placeholder="Comment"></textarea>
+                    <div style="display: flex; justify-content: space-between;">
+                        <button type="button" id="editButton" onclick="editComment();">Update</button>
+                        <button type="button" id="deleteButton" onclick="deleteComment();" style="width: 10%">Delete</button>
+                        <button type="button" id="closeEditButton" onclick="closeCommentEdit();">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>

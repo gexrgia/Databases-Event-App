@@ -1,9 +1,9 @@
-/* JavaScript functions-json to php */
 var userId = 0;
 /*Name for comments (?)*/
 var firstName = "";
 var lastName = "";
 
+/*----------------User Access Functions------------*/
 function loginUser() {
     userId = 0;
     firstName = "";
@@ -46,6 +46,13 @@ function loginUser() {
     }
 }
 
+function logoutUser(){}
+
+function addUser(){}
+
+function createRSO(){}
+
+/*------------------Event Functions------------------*/
 function searchEvent() {
   var qEventName = document.getElementById("qEventName").value;
   var qRSOName = document.getElementById("qRSO").value;
@@ -76,9 +83,13 @@ function searchEvent() {
 
         var grid = document.getElementById("eventsBody");
         for (var i = 0; i < results.length; i++) {
+
+          /*Create new <div id="eventRow" class="row"> */
           newRow = document.createElement( "div" );
           newRow.id = 'eventRow';
           newRow.class = 'row';
+
+          /*Create new <div class="col-lg-10"> (holds event data)*/
           newTenCol = document.createElement( "div" );
           newTenCol.class = "col-lg-10";
 
@@ -120,42 +131,65 @@ function searchEvent() {
     displayError(err.message);
   }
 }
-function addEvent(){}
-function viewEvent(){}
 
-function openEdit(button, cid) {
-  curRow = button.parentNode.parentNode;
-  curEvent = cid;
-
-  var cols = curRow.getElementsByTagName("div");
-  var group = cols[0].getElementsByTagName("div");
-
-  document.getElementById("eName").value = group[0].innerHTML;
-  document.getElementById("eDate").value = group[1].innerHTML;
-  document.getElementById("eLocation").value = group[2].innerHTML;
-  document.getElementById("eDescription").value = group[3].innerHTML;
-
-
+function openNewForm(){
   document.getElementById("overlay").style.display = "block";
-  document.getElementById("editForm").style.display = "block";
+  document.getElementById("newForm").style.display = "block";
 }
 
-function closeEdit() {
-  curRow = null;
-  curEvent = 0;
-
-  document.getElementById("eName").value = "";
-  document.getElementById("eDate").value = "";
-  document.getElementById("eLocation").value = "";
-  document.getElementById("eDescription").value = "";
-
-  document.getElementById("editForm").style.display = "none";
+function closeNewForm(){
+  document.getElementById("newForm").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
+
+function addEvent(button){
+  var eventData = button.parentNode;
+  var eName = eventData.getElementById("newEventName");
+  var eHost = eventData.getElementById("newEventHost");
+  var eTime = eventData.getElementById("newEventTime");
+  var eLocation = eventData.getElementById("newEventLoc");
+  var eDescription = eventData.getElementById("newEventDesc");
+
+  var jsonPayload = JSON.stringify({eventName:eName,rso:eHost,date:eTime,location:eLocation, description: eDescription, userid:userId});
+
+}
+function viewEvent(){}
+
+/*------------------Event Editing Functions - form overlay------------------*/
+
+
+
+
+/*----------- Comment posting/editing functions ------------*/
+
+function readComments(){}
 
 function newComment(){
   var showComment = document.getElementById("newCommentSection");
   showComment.style.display == "none" ? showComment.style.display = "block" : showComment.style.display = "none";
 }
+
 function postComment(){}
+
+function openCommentEdit(button, cid) {
+  curRow = button.parentNode.parentNode;
+  curComment = cid;
+
+  var cols = curRow.getElementsByTagName("div");
+
+  document.getElementById("eComment").value = cols[0].innerHTML;
+
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("editForm").style.display = "block";
+}
+
+function closeCommentEdit() {
+  curRow = null;
+  curEvent = 0;
+
+  document.getElementById("eComment").value = "";
+  document.getElementById("editForm").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
+
 

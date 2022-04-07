@@ -4,7 +4,8 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Event Feed</title>
-        <!--CSS-->
+        <!--JavaScript & CSS-->
+        <script type="text/javascript" src="../js/eventCode.js?version=1" defer></script>
         <link href="../css/styles.css?version=1" rel="stylesheet">
         <!--Bootstrap & Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -13,11 +14,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="body" style="padding-top: 1%;">
-            <div id="contentContainer">
+        <div class="body">
+            <div id="contentContainer" style="padding: 2%;">
+
                 <div id="userBlock">
-                    <div width="90%">
-                        <h1>[user]</h1>
+                    <div id="userAdd">
+                        <div id="userButtons">
+                            <button id="homeButton" style="width:50px; margin-right: 1%;" onclick="location.href='eventFeed.html';">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-house" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                </svg>
+                            </button>
+                            <button id="addButton" style="width:50px;" onclick="openNewForm();">New</button>
+                        </div>
+                        
+                        <h2 style="margin-bottom: 0px;">[user]</h2>
                     </div>
                     <div width="10%">
                         <button type="button" id="logoutButton" onclick="doLogout();">Logout</button>
@@ -31,7 +43,6 @@
                     <input class="query" type="datetime-local" id="qDate" placeholder="Date">
                     <input class="query" type="text" id="qLocation" placeholder="Location">
                     <button type="button" id="searchButton" style="width: 8%" onclick="searchEvent();">Search</button>
-                    <button type="button" id="addButton" style="width: 8%" onclick="addEvent();">Add</button>
                 </div>
             
                 <!--Result table-->
@@ -49,6 +60,14 @@
                             <button id="viewButton">View</button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="overlay">
+                <div id="newForm">
+                    <h3 style="text-align: center;">Create</h3>
+                        <button type="button" id="eFormButton" onclick="location.href='newEvent.html';" style="margin-bottom: 1%">New Event</button>
+                        <button type="button" id="rFormButton" onclick="location.href='newRSO.html';" style="margin-bottom: 1%">New RSO</button>
+                        <button type="button" id="closeNewForm" onclick="closeNewForm();">Cancel</button>
                 </div>
             </div>
         </div>

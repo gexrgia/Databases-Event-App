@@ -24,7 +24,7 @@
                         <span id="inner-title">Sign In</span>
                         <input class="creds" type="text" id="email" placeholder="Email">
                         <input class="creds" type="password" id="password" placeholder="Password"/>
-                        <button type="button" id="loginButton" onclick="loginUser();">Login</button>
+                        <button id="loginButton" onclick="loginUser();">Login</button>
                     </div>
 
                     <!--Borderline-->
@@ -36,9 +36,11 @@
                         <input class="creds" type="text" id="firstName" placeholder="First Name">
                         <input class="creds" type="text" id="lastName" placeholder="Last Name"/>
                         <input class="creds" type="text" id="newEmail" placeholder="Email"/>
+                        <input class="creds" type="tel" id="newPhone" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                        <input class="creds" type="text" id="newUsername" placeholder="Username" />
                         <input class="creds" type="password" id="newPassword" placeholder="Password"/>
                         <input class="creds" type="password" id="newPasswordConfirm" placeholder="Confirm Password"/>
-                        <button type="button" id="registerButton" onclick="addUser();">Register</button>
+                        <button id="registerButton" onclick="addUser();">Register</button>
                     </div>
                 </div>
             </div>
